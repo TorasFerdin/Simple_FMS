@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Food List</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Food List</h1>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Availability</th>
+                    <th>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#insertModal">
+                            +
+                        </button>
+                    </th>
+                </tr>
+            </thead>
+            <tbody id="table-body-custom">
+
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Insert Modal -->
+<div class="modal fade" id="insertModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Insert new Food</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="input-name">Name</label>
+            <input type="text" id="input-name" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="input-category">Category</label>
+            <input type="text" id="input-category" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="input-calories">Calories</label>
+            <input type="number" id="input-calories" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="input-price">Price</label>
+            <input type="number" id="input-price" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="input-availability">Availability</label>
+            <select id="input-availability" class="form-control">
+                <option value="true">YES</option>
+                <option value="false">NO</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="input-expiration">Expiration</label>
+            <input type="date" id="input-expiration" class="form-control">
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="save()">Save</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+    <!-- Update Modal -->
+    <div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="updateModalLabel">Update Food</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+    
+              <div class="form-group">
+                <label for="update-name">Name</label>
+                <input type="text" id="update-name" class="form-control">
+              </div>
+    
+              <div class="form-group">
+                <label for="update-category">Category</label>
+                <input type="text" id="update-category" class="form-control">
+              </div>
+    
+              <div class="form-group">
+                <label for="update-calories">Calories</label>
+                <input type="number" id="update-calories" class="form-control">
+              </div>
+    
+              <div class="form-group">
+                <label for="update-price">Price</label>
+                <input type="number" id="update-price" class="form-control">
+              </div>
+    
+              <div class="form-group">
+                <label for="update-availability">Availability</label>
+                <select id="update-availability" class="form-control">
+                    <option value="true">YES</option>
+                    <option value="false">NO</option>
+                </select>
+              </div>
+    
+              <div class="form-group">
+                <label for="update-expiration">Expiration</label>
+                <input type="date" id="update-expiration" class="form-control">
+              </div>
+    
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="btn-save-upd" onclick="saveUpdate()">Save</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <script src="js/list.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
